@@ -1,0 +1,150 @@
+<html>
+    <head>
+       
+    <link rel="stylesheet" href="style.css">
+        <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <title>
+            Welcome to Super Singer Talent show
+        </title>
+        <script type="text/javascript">
+            function validate(){
+                var ee=document.getElementById('uname').value;
+                if(ee==='')
+                {
+                    document.getElementById('sf').innerHTML="Please fill this field";
+                    document.getElementById('sf').style.visibility="visible";
+                }
+                else {
+                    document.getElementById('sf').style.visibility="hidden";
+                }
+                var dd=document.getElementById('pass').value;
+               
+                if(dd==='')
+                {
+                    document.getElementById('wf').innerHTML="Please fill this field";
+                    document.getElementById('wf').style.visibility="visible";
+                }
+                else if(dd.length<8)
+                {
+                    document.getElementById('wf').innerHTML="Password must have atleast 8 characters";
+                    document.getElementById('wf').style.visibility="visible";
+                }
+                else if(dd.search(/[0-9]/)=== -1)
+                {
+                    document.getElementById('wf').innerHTML="Password must have numbers";
+                    document.getElementById('wf').style.visibility="visible";
+                }
+                else if(dd.search(/[A-Z]/)=== -1)
+                {
+                    document.getElementById('wf').innerHTML="Password must have one capital letter";
+                    document.getElementById('wf').style.visibility="visible";
+                }
+                else if(dd.search(/[\@\#\$\%\^\&\9\0\_\+\.\,\;\:]/)=== -1)
+                {
+                    document.getElementById('wf').innerHTML="Password must have one special character";
+                    document.getElementById('wf').style.visibility="visible";
+                }
+                else
+                {
+                    document.getElementById('wf').style.visibility="hidden";
+                }
+               
+                var hi=document.getElementById('mnumber').value;
+                var regx= /^[6-9][0-9]{9}$/;
+                if(hi==='')
+                {
+                    document.getElementById('hh').innerHTML="Please fill this field";
+                    document.getElementById('hh').style.visibility="visible";
+                }
+              
+                else if(regx.test(hi))
+                {
+                document.getElementById('hh').style.visibility="hidden";
+                }
+                else 
+                {
+                    document.getElementById('hh').innerHTML="Must have 10 numbers";
+                    document.getElementById('hh').style.visibility="visible";
+                }
+                var ii=document.getElementById('email').value;
+                var re= /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+                if(ii==='')
+                {
+                    document.getElementById('ff').innerHTML="Please fill this field";
+                    document.getElementById('ff').style.visibility="visible";
+                }
+                else if(re.test(ii)){
+                    document.getElementById('ff').style.visibility="hidden";
+                }
+                else 
+                {
+                    document.getElementById('ff').innerHTML="Invalid email format";
+                    document.getElementById('ff').style.visibility="visible";
+                }
+                var oo=document.getElementById('singer').value;
+                if(oo==='')
+                {
+                    document.getElementById('of').innerHTML="Please fill this field";
+                    document.getElementById('of').style.visibility="visible";
+                }
+                else {
+                    document.getElementById('of').style.visibility="hidden";
+                }
+            }
+        </script>
+    </head>
+    <body>
+     
+    <header class="header">
+        <nav class='navbar navbar-style'>
+            <div class='container'>
+            <div class='navbar-header'>
+                <img class='logo' src="mic.jpg">
+            </div>
+            <ul class='nav navbar-nav navbar-right'>
+                <li><a href=''>Home</a></li>
+                <li><a href=''>Events</a></li>
+                <li><a href=''>Contact Us</a></li>
+                <li><a href=''>About Us</a></li>
+            </ul>
+        </div>
+        </nav>   <center>
+        <h1>Registration Form</h1>
+    </center>
+    <div class="jj">
+    <form>
+        <label>Username</label><br>
+        <input type='text' id='uname' placeholder='Username'><br>
+        <label id='sf' style="color:red;visibility:hidden"></label><br>
+        <label>Password</label><br>
+        <input type='text' id='pass' placeholder='Password'><br>
+        <label id='wf' style="color:red;visibility:hidden"></label><br>
+        <label>Email</label><br>
+        <input type='email' id='email' placeholder='Email'> <br>
+        <label id='ff' style="color:red;visibility:hidden"></label><br>
+        <label>Mobile number</label><br>
+        <input type='text' id='mnumber' placeholder='Mobile number'><br>
+        <label id='hh' style="color:red;visibility:hidden"></label><br>
+        <label>Category</label><br>
+        <select id="singer" name="singer">
+          <option value="classic">classic</option>
+          <option value="western">western</option>
+          <option value="karnatic">karnatic</option>
+          <option value="folk">folk</option>
+          <option value="rap">rap</option>
+        </select><br>
+        <label id='of' style="color:red;visibility:hidden"></label><br>
+        <button style="background-color: green; color:black; font-size:medium;font-family: Georgia, serif;" type="button" onclick="validate()">Submit</button>
+    </form>
+   <!-- <p class="dd">Already have an account</p> <p class="dd">Forget Password?</p>-->
+</div>
+    </header>
+    </body>
+</html>
